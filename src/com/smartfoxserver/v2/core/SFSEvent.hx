@@ -1725,148 +1725,79 @@ class SFSEvent extends BaseEvent {
 	@:isVar public var changedVars (get, set):Dynamic;
 	@:isVar public var reason (get, set):Dynamic;
 
-	private function useWssParams():Bool {
-		//TODO: no need to check this when it works on all platforms
-		//#if ios return false; #end
-		//#if mac return false; #end
-
-		if (PlatformUtils.isMobileOS || PlatformUtils.inBrowser) {
-			return true;
-		}
-
-		return false;
-	}
-
 	public function extensionParams():Dynamic {
-		if (useWssParams()) {
-			return params.params;
-		}
-		return params;
+		return params.params;
 	}
 
 	public function get_cmd():String {
-		if (useWssParams()) {
-			return params.cmd;
-		}
-		return cmd;
+		return params.cmd;
 	}
 
 	public function set_cmd(value:String):String {
-		if (useWssParams()) {
-			return params.cmd = value;
-		}
-		return cmd = value;
+		return params.cmd = value;
 	}
 
 	public function get_success():Dynamic {
-		if (useWssParams()) {
-			return params.success;
-		}
-		return success;
+		return params.success;
 	}
 
 	public function set_success(value:Dynamic):Dynamic {
-		if (useWssParams()) {
-			return params.success = value;
-		}
-		return success = value;
+		return params.success = value;
 	}
 
 	public function get_errorCode():Int {
-		if (useWssParams()) {
-			return params.errorCode;
-		}
-		return errorCode;
+		return params.errorCode;
 	}
 
 	public function set_errorCode(value:Int):Int {
-		if (useWssParams()) {
-			return params.errorCode = value;
-		}
-		return errorCode = value;
+		return params.errorCode = value;
 	}
 
 	public function get_errorMessage():String {
-		if (useWssParams()) {
-			return params.errorMessage;
-		}
-		return errorMessage;
+		return params.errorMessage;
 	}
 
 	public function set_errorMessage(value:String):String {
-		if (useWssParams()) {
-			return params.errorMessage = value;
-		}
-		return errorMessage = value;
+		return params.errorMessage = value;
 	}
 
 	public function get_room():Dynamic {
-		if (useWssParams()) {
-			return params.room;
-		}
-		return room;
+		return params.room;
 	}
 
 	public function set_room(value:Dynamic):Dynamic {
-		if (useWssParams()) {
-			return params.room = value;
-		}
-		return room = value;
+		return params.room = value;
 	}
 	
 	public function get_message():String {
-		if (useWssParams()) {
-			return params.message;
-		}
-		return message;
+		return params.message;
 	}
 
 	public function set_message(value:String):String {
-		if (useWssParams()) {
-			return params.message = value;
-		}
-		return message = value;
+		return params.message = value;
 	}
 
 	public function get_user():Dynamic {
-		if (useWssParams()) {
-			return params.user;
-		}
-		return user;
+		return params.user;
 	}
 
 	public function set_user(value:Dynamic):Dynamic {
-		if (useWssParams()) {
-			return params.user = value;
-		}
-		return user = value;
+		return params.user = value;
 	}
 	
 	public function get_changedVars():Dynamic {
-		if (useWssParams()) {
-			return params.changedVars;
-		}
-		return changedVars;
+		return params.changedVars;
 	}
 
 	public function set_changedVars(value:Dynamic):Dynamic {
-		if (useWssParams()) {
-			return params.changedVars = value;
-		}
-		return changedVars = value;
+		return params.changedVars = value;
 	}
 
 	public function get_reason():Dynamic {
-		if (useWssParams()) {
-			return params.reason;
-		}
-		return reason;
+		return params.reason;
 	}
 
 	public function set_reason(value:Dynamic):Dynamic {
-		if (useWssParams()) {
-			return params.reason = value;
-		}
-		return reason = value;
+		return params.reason = value;
 	}
 }
