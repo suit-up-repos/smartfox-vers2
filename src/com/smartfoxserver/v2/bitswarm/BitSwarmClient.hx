@@ -204,12 +204,12 @@ class BitSwarmClient extends EventDispatcher
 	}
 	
 	private function onWSConnect(evt : WSEvent) : Void {
-		trace("onWSConnect");
+		//trace("onWSConnect");
 		processConnect();
 	}
 	
 	private function onWSData(evt : WSEvent) : Void {
-		trace("onWSData");
+		//trace("onWSData");
 		var buffer : ByteArray = evt.params.data;
 		if (buffer != null)
 		{
@@ -218,7 +218,7 @@ class BitSwarmClient extends EventDispatcher
 	}
 	
 	private function onWSClosed(evt : WSEvent) : Void {
-		trace("onWSClosed");
+		//trace("onWSClosed");
 		processClose(false);
 	}
 	
