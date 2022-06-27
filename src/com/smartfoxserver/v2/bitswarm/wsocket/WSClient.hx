@@ -51,7 +51,13 @@ class WSClient extends EventDispatcher
 	{
 		return _useWSS ? "wss://" : "ws://";
 	}
-
+	private function onClose():Void
+	{
+		if(!_connected)
+			return;
+		_connected = false;
+		dispatchEvent(new WSEvent(WSEvent.CLOSED, { }));
+	}
 	public function connect(url : String, port:Int, useWSS:Bool) : Void
 	{
 		if (connected)
@@ -69,12 +75,7 @@ class WSClient extends EventDispatcher
 				data : ByteArray.fromBytes(bytes)
 			}));
 		};
-		ws.onclose = function() {
-			if(!_connected)
-				return;
-			_connected = false;
-			dispatchEvent(new WSEvent(WSEvent.CLOSED, { }));
-		};
+		ws.onclose = onClose;
 		ws.onerror = function(error:String) {
 			_connected = false;
 			var wsEvt : WSEvent = new WSEvent(WSEvent.IO_ERROR, {
