@@ -1917,7 +1917,7 @@ class SmartFox extends EventDispatcher {
 	}
 
 	private function onSocketDataError(evt:BitSwarmEvent):Void {
-		dispatchEvent(SFSEvent.newInst(SFSEvent.SOCKET_ERROR, {errorMessage: evt.params.message, details: evt.params.details}));
+		dispatchEvent(SFSEvent.newInst(SFSEvent.SOCKET_ERROR, {errorMessage: evt.params.message, edetails: evt.params.edetails}));
 	}
 
 	private function onSocketIOError(evt:BitSwarmEvent):Void {

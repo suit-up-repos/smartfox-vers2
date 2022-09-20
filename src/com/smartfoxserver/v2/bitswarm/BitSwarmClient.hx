@@ -555,7 +555,7 @@ class BitSwarmClient extends EventDispatcher
 				trace(haxe.CallStack.toString( haxe.CallStack.exceptionStack()));
 				trace(buffer.toString());
 				var event:BitSwarmEvent = new BitSwarmEvent(BitSwarmEvent.DATA_ERROR);
-				event.params = { message:error.message, details:error.details };
+				event.params = { message:error.message, edetails:error.edetails };
 				dispatchEvent(event);
 			} catch (e:Dynamic) {
 				trace(e);
